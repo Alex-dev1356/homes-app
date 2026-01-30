@@ -34,8 +34,23 @@ In your code:
 aria-hidden="true" tells assistive tech to skip reading this image, so the alt text will not be announced.
 
 - Summary:
-
 alt="logo" → fallback text for images and SEO.
 aria-hidden="true" → hides the image from screen readers to avoid redundancy.
 If you want the logo to be accessible to screen readers, you should remove aria-hidden="true".
 If it’s decorative only, you can keep aria-hidden="true" and set alt="" instead for best accessibility practice.
+
+- Creating new Home Component
+ `ng generate component --standalone --inline-template`
+ 
+--standalone
+Purpose: Creates a standalone component instead of a traditional component that must be declared in an NgModule.
+Standalone components:
+Can be used without being declared in any NgModule.
+Import their own dependencies directly in the imports array inside the @Component decorator.
+Are useful for module-less or simplified Angular applications.
+
+--inline-template
+Purpose: Places the component’s HTML directly inside the template property of the @Component decorator instead of generating a separate .html file.
+Benefits:
+Keeps small templates in the same file as the component logic.
+Reduces the number of files for very simple components.
