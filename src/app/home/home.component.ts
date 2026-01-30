@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HousingLocationComponent } from '../housing-location/housing-location.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HousingLocationComponent],
   template: `
     <section>
       <form>
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
+      <app-housing-location></app-housing-location>
     <section class="results"></section>
   `,
   styleUrls: ['./home.component.css']
