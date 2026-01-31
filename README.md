@@ -65,7 +65,7 @@ Can have default values.
 Supports type checking in TypeScript.
 Can be renamed using an alias.
 
---String Interpolation
+- String Interpolation
 String interpolation is used to display component data inside your HTML template. It uses the double curly braces {{ }} syntax.
 Example:
 @Component({
@@ -84,7 +84,7 @@ Cannot be used to set element or component properties like value or disabled—f
 Property Binding
 
 
---Property binding is used to bind data to an element’s property. It uses square brackets [ ] and allows Angular to dynamically update the property whenever the component data changes.
+- Property binding is used to bind data to an element’s property. It uses square brackets [ ] and allows Angular to dynamically update the property whenever the component data changes.
 Example:
 @Component({
   selector: 'app-user',
@@ -96,3 +96,5 @@ export class UserComponent {
 Here, [value]="name" binds the name property of the component to the input element's value property.
 If the name changes in the component, the input element will automatically reflect the new value.
 Property binding works with HTML element properties, DOM properties, or even child component input properties.
+
+- Link of where to find the list of itrems added on the housingLocationList property: https://goo.gle/homes-app-listings
