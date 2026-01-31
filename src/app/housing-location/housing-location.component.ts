@@ -8,7 +8,9 @@ import { HousingLocation } from '../housing-location.js';
   imports: [CommonModule],
   template: `
     <section class="listing">
-      <img class="listing-photo" src="" alt="">
+      <!-- Using the property binding on the src attribute to bind the URL of the image and treat
+       the "housingLocation.photo" as a property from the parent component which is "housingLocation"-->
+      <img class="listing-photo" [src]="housingLocation.photo" alt="">
       <h2 class="listing-heading">Heading</h2>
       <p class="listing-location">Location</p>
     </section>
