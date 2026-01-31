@@ -64,3 +64,35 @@ Used for one-way data binding (parent → child).
 Can have default values.
 Supports type checking in TypeScript.
 Can be renamed using an alias.
+
+--String Interpolation
+String interpolation is used to display component data inside your HTML template. It uses the double curly braces {{ }} syntax.
+Example:
+@Component({
+  selector: 'app-user',
+  template: `<p>Hello, {{ name }}!</p>`
+})
+export class UserComponent {
+  name: string = 'Alice';
+}
+Here, {{ name }} displays the value of the name property from the UserComponent class.
+The browser will render: Hello, Alice!
+It is ideal for binding string values or simple expressions directly into the HTML content.
+Key Points about String Interpolation:
+Can evaluate expressions: {{ 1+1 }} will render 2.
+Cannot be used to set element or component properties like value or disabled—for that, property binding is required.
+Property Binding
+
+
+--Property binding is used to bind data to an element’s property. It uses square brackets [ ] and allows Angular to dynamically update the property whenever the component data changes.
+Example:
+@Component({
+  selector: 'app-user',
+  template: `<input [value]="name">`
+})
+export class UserComponent {
+  name: string = 'Alice';
+}
+Here, [value]="name" binds the name property of the component to the input element's value property.
+If the name changes in the component, the input element will automatically reflect the new value.
+Property binding works with HTML element properties, DOM properties, or even child component input properties.
