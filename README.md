@@ -41,7 +41,7 @@ If it’s decorative only, you can keep aria-hidden="true" and set alt="" instea
 
 - Creating new Home Component
  `ng generate component --standalone --inline-template`
- 
+
 --standalone
 Purpose: Creates a standalone component instead of a traditional component that must be declared in an NgModule.
 Standalone components:
@@ -54,3 +54,13 @@ Purpose: Places the component’s HTML directly inside the template property of 
 Benefits:
 Keeps small templates in the same file as the component logic.
 Reduces the number of files for very simple components.
+
+-  @Input() decorator is used to pass data from a parent component to a child component.
+It allows a child component to receive values dynamically from its parent, enabling component communication.
+
+Key Points
+Declared in the child component.
+Used for one-way data binding (parent → child).
+Can have default values.
+Supports type checking in TypeScript.
+Can be renamed using an alias.

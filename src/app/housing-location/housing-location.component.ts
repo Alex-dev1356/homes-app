@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HousingLocation } from '../housing-location.js';
 
 @Component({
   selector: 'app-housing-location',
@@ -15,5 +16,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./housing-location.component.css']
 })
 export class HousingLocationComponent {
-
+    //Using the @Input() decorator to make it an input property\
+    //The ! is a non-null assertion operator that tells the compiler that the value of 
+    //the property won't be null or undefined. This is useful when you know that the value is not null
+    @Input() housingLocation!:HousingLocation;
 }
