@@ -12,8 +12,8 @@ import { HousingLocation } from '../housing-location.js';
        the "housingLocation.photo" as a property from the parent component which is "housingLocation"-->
       <!-- Using String Interpolation on the alt attribute to bind the value of the "housingLocation.name"-->
       <img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{housingLocation.name}}">
-      <h2 class="listing-heading">Heading</h2>
-      <p class="listing-location">Location</p>
+      <h2 class="listing-heading">{{housingLocation.name}}</h2>
+      <p class="listing-location">{{housingLocation.city}}, {{housingLocation.state}}</p>
     </section>
   `,
   styleUrls: ['./housing-location.component.css']
