@@ -15,7 +15,13 @@ import { HousingLocation } from '../housing-location';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
-      <app-housing-location></app-housing-location>
+      <!-- Using the *ngFor directive to loop over the list of housing locations -->
+      <!-- Here we use as well the property binding to pass the data to the child component
+       where [housingLocation]="housingLocation" -->
+      <app-housing-location 
+      *ngFor = "let housingLocation of housingLocationList"
+      [housingLocation]="housingLocation">
+      </app-housing-location>
     <section class="results"></section>
   `,
   styleUrls: ['./home.component.css']

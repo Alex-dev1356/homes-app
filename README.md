@@ -98,3 +98,22 @@ If the name changes in the component, the input element will automatically refle
 Property binding works with HTML element properties, DOM properties, or even child component input properties.
 
 - Link of where to find the list of itrems added on the housingLocationList property: https://goo.gle/homes-app-listings
+
+- The *ngFor directive in Angular is a structural directive used to render a template for each item in a collection. It is part of the CommonModule and is widely used for creating dynamic lists, tables, and repeated UI elements.
+
+Basic Syntax:
+
+<li *ngFor="let item of items">{{ item }}</li>
+Copy
+Here, item is a local variable representing each element in the items array.
+
+- *ngIF directive in Angular:
+ngIf is used to display or hide the DOM Element based on the expression value assigned to it. The expression value may be either true or false.
+
+Syntax:
+<element *ngIf="condition">...</element>
+
+Uses of *ngIf Directive:
+Conditional Rendering: *ngIf is commonly used for conditional rendering of elements based on various conditions, such as user authentication status, data availability, or user interactions.
+Error Handling: *ngIf can be used to display error messages or fallback content when certain conditions are not met, providing a seamless user experience.
+Dynamic UI Components: *ngIf enables the dynamic rendering of UI components based on application state or user inputs, allowing for a more interactive and personalized user experience.
