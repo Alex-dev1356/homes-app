@@ -15,7 +15,9 @@ const routeConfig: Routes = [
     },
     //Adding route for the Details of each property
     {
-        path: 'details',
+        //The :id is a placeholder for the parameter value well receive in the URLs that 
+        //match against this route
+        path: 'details/:id',
         component: DetailsComponent,
         title: 'Details Page'
     }
