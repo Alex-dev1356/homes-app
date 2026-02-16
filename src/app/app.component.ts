@@ -13,11 +13,14 @@ import { RouterModule } from '@angular/router';
         alt="logo" aria-hidden="true">
       </header>
       <section class="content">
-        <app-home></app-home>
+        <!-- <app-home></app-home> -->
+
+        <!-- Adding the router-outlet directive to the template to display components HTML template based on routes defined -->
+        <router-outlet></router-outlet>
       </section>
     </main>`,
   styleUrls: ['./app.component.css'],
-  imports: [HomeComponent, RouterModule ]
+  imports: [HomeComponent, RouterModule]
 })
 export class AppComponent {
   title = 'homes';
