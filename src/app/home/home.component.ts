@@ -13,14 +13,14 @@ import { HousingService } from '../housing.service';
     <section>
       <form>
         <input type="text" placeholder="Filter by city" #filter>
-        <button class="primary" type="button">Search</button>
+        <button class="primary" type="button" (click)="FilterResults(filter.value)">Search</button>
       </form>
     </section>
       <!-- Using the *ngFor directive to loop over the list of housing locations -->
       <!-- Here we use as well the property binding to pass the data to the child component
        where [housingLocation]="housingLocation" -->
       <app-housing-location 
-      *ngFor = "let housingLocation of housingLocationList"
+      *ngFor = "let housingLocation of filteredLocationList"
       [housingLocation]="housingLocation">
       </app-housing-location>
     <section class="results"></section>
@@ -32,6 +32,9 @@ export class HomeComponent {
     //and we're gonna assign it to an empyt array
     housingLocationList: HousingLocation[] = []
     housingService: HousingService = inject(HousingService)
+
+    //Adding a new Property
+    filteredLocationList: HousingLocation[] = []
     
     constructor()
     {
@@ -41,6 +44,19 @@ export class HomeComponent {
       this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) =>
       {
         this.housingLocationList = housingLocationList;
+        this.filteredLocationList = housingLocationList;
       }) 
+    }
+
+    FilterResults(text: string){
+      //This is the code that checks for blank text
+      if(!text){
+        this.filteredLocationList = this.housingLocationList;
+      }
+
+      //This is where we'll handle the actual filtering of the application
+      this.filteredLocationList = this.housingLocationList.filter(
+        housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+      );
     }
 }
