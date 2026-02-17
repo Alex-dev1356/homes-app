@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housing-location';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
     <article>
       <img class="listing-photo" [src]="housingLocation?.photo">
@@ -25,7 +26,19 @@ import { HousingLocation } from '../housing-location';
       </section>
       <section class="listing-apply">
         <h2 class="section-heading">Apply to live here</h2>
-        <button class="primary">Apply now</button>
+        
+        <!-- Replaceing this with a form Element -->
+        <!-- <button class="primary">Apply now</button> -->
+
+        <form [formGroup]="applyForm">
+          <label for="first-name">First Name</label>
+          <input id="first-name" type="text" formControlName="firstName">
+          <label for="last-name">Last Name</label>
+          <input id="last-name" type="text" formControlName="lastName">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email">
+          <button type="submit" class="primary">Apply now</button>
+        </form>
       </section>
     </article>
   `,
@@ -39,6 +52,13 @@ export class DetailsComponent {
   housingService: HousingService = inject(HousingService);
 
   housingLocation: HousingLocation | undefined;
+
+  //Adding new property for the Form
+  applyForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl('')
+  });
 
   //Creating a method
   constructor()

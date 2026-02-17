@@ -5,15 +5,16 @@ import { HousingLocation } from './housing-location';
   providedIn: 'root'
 })
 export class HousingService {
-  protected housingLocationList: HousingLocation[] = [{
-      id: 0,
-      name: 'Acme Fresh Start Housing',
-      city: 'Chicago',
-      state: 'IL',
-      photo: '/assets/bernard-hermant-CLKGGwIBTaY-unsplash.jpg',
-      availableUnits: 4,
-      wifi: true,
-      laundry: true
+  protected housingLocationList: HousingLocation[] = [
+      {
+        id: 0,
+        name: 'Acme Fresh Start Housing',
+        city: 'Chicago',
+        state: 'IL',
+        photo: '/assets/bernard-hermant-CLKGGwIBTaY-unsplash.jpg',
+        availableUnits: 4,
+        wifi: true,
+        laundry: true
       },
       {
         id: 1,
