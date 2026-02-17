@@ -30,7 +30,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
         <!-- Replaceing this with a form Element -->
         <!-- <button class="primary">Apply now</button> -->
 
-        <form [formGroup]="applyForm">
+        <form [formGroup]="applyForm" (submit)="submitApplication()">
           <label for="first-name">First Name</label>
           <input id="first-name" type="text" formControlName="firstName">
           <label for="last-name">Last Name</label>
@@ -65,5 +65,16 @@ export class DetailsComponent {
   {
     const housingLicationId = Number(this.route.snapshot.paramMap.get('id'));
     this.housingLocation  = this.housingService.getHousingLocationById(housingLicationId);
+  }
+
+  //Adding a method to submit the form
+  submitApplication()
+  {
+    //Calling the method from the housingService
+    this,this.housingService.submitApplication(
+      this.applyForm.value.firstName ?? '', //The ?? is a null coalescing operator
+      this.applyForm.value.lastName ?? '', //So if the value on the left hand side
+      this.applyForm.value.email ?? ''    //is null, then use the value on the right hand side
+    );
   }
 }
