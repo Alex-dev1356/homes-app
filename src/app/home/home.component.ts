@@ -35,6 +35,12 @@ export class HomeComponent {
     
     constructor()
     {
-      this.housingLocationList = this.housingService.getAllHousingLocations();
+      // this.housingLocationList = this.housingService.getAllHousingLocations();
+
+      //We need to update the constructor method to call the new Promised-based Service
+      this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) =>
+      {
+        this.housingLocationList = housingLocationList;
+      }) 
     }
 }

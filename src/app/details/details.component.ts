@@ -64,7 +64,12 @@ export class DetailsComponent {
   constructor()
   {
     const housingLicationId = Number(this.route.snapshot.paramMap.get('id'));
-    this.housingLocation  = this.housingService.getHousingLocationById(housingLicationId);
+    // this.housingLocation  = this.housingService.getHousingLocationById(housingLicationId);
+  
+    //Updating the constructor method to call the new Promised-based Service
+    this.housingService.getHousingLocationById(housingLicationId).then(housingLocation => {
+      this.housingLocation = housingLocation;
+    });
   }
 
   //Adding a method to submit the form
