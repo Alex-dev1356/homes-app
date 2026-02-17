@@ -71,7 +71,7 @@ export class DetailsComponent {
   submitApplication()
   {
     //Calling the method from the housingService
-    this,this.housingService.submitApplication(
+      this.housingService.submitApplication(
       this.applyForm.value.firstName ?? '', //The ?? is a null coalescing operator
       this.applyForm.value.lastName ?? '', //So if the value on the left hand side
       this.applyForm.value.email ?? ''    //is null, then use the value on the right hand side

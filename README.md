@@ -119,3 +119,13 @@ Error Handling: *ngIf can be used to display error messages or fallback content 
 Dynamic UI Components: *ngIf enables the dynamic rendering of UI components based on application state or user inputs, allowing for a more interactive and personalized user experience.
 
 - Link of where to find the list of items added each of the CSS Components: https://goo.gle/homes-app-styles
+
+
+- To move our data from a hardcoded array in our app to a standalon server we need to install on the terminal 
+  => npm install -g json-server
+and the 
+  => touch db.json
+
+
+- Starting the Json Server on the command line: 
+  => json-server --watch db.json
